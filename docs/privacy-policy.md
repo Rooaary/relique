@@ -1,11 +1,11 @@
 # Privacy Policy for Relique
 
-**Effective date:** April 20, 2026
+**Effective date:** April 22, 2026
 
 Relique is a mobile app that helps you identify and catalog antiques using AI. This policy explains what data the app collects, how it is used, and who has access to it.
 
 **Developer:** Rory Watson
-**Contact:** rooaarywatson@gmail.com
+**Contact:** RAWorks2000@gmail.com
 
 ---
 
@@ -23,7 +23,11 @@ Relique is a mobile app that helps you identify and catalog antiques using AI. T
 
 ### Photos you submit for identification
 
-When you use the identification feature, the photo you take is sent to Google's Gemini API for analysis. Google processes the image to return identification results. The photo is **not stored** on our servers or any server we control. Google's handling of that data is governed by [Google's Privacy Policy](https://policies.google.com/privacy).
+When you use the identification feature, the photo you take is sent to Google's Gemini model via Google Cloud Vertex AI for analysis. Google processes the image to return identification results. The photo is **not stored** on our servers or any server we control. Google's handling of that data is governed by [Google's Privacy Policy](https://policies.google.com/privacy).
+
+### Device integrity attestation
+
+To protect the service from abuse and fraudulent usage, Relique uses Firebase App Check with the Google Play Integrity API. When you make an identification request, your device generates a short-lived attestation token (not a personal identifier) that is verified by Google and Relique's backend. This is the standard Android anti-abuse mechanism; it does not transmit any personal data. See [Google's Play Integrity API documentation](https://developer.android.com/google/play/integrity/verdicts) for details.
 
 ### Your collection
 
@@ -54,7 +58,8 @@ Subscriptions are managed through RevenueCat, which processes purchase informati
 
 | Service | Purpose | Data involved |
 |---------|---------|---------------|
-| Google Gemini API | AI-powered antique identification | Photos submitted for analysis |
+| Google Cloud Vertex AI (Gemini) | AI-powered antique identification | Photos submitted for analysis |
+| Firebase App Check + Play Integrity API | Device attestation to prevent abuse | Short-lived non-personal attestation tokens |
 | Google AdMob | Advertising (free tier) | Device identifiers, ad interaction data |
 | RevenueCat | Subscription management | Google Play purchase tokens and subscription status |
 | Firebase Crashlytics | Crash reporting | Device info, crash logs (no personal identifiers) |
@@ -71,8 +76,8 @@ Relique is not directed at children under 13. We do not knowingly collect data f
 
 ## Changes to this policy
 
-If this policy changes, the updated version will be posted at [https://relique.app/privacy](https://relique.app/privacy) with a new effective date.
+If this policy changes, the updated version will be posted at [https://rooaary.github.io/relique/privacy-policy](https://rooaary.github.io/relique/privacy-policy) with a new effective date.
 
 ## Contact
 
-If you have questions about this policy, reach out at **rooaarywatson@gmail.com**.
+If you have questions about this policy, reach out at **RAWorks2000@gmail.com**.
